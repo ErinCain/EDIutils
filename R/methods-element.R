@@ -30,6 +30,10 @@ add_method <- function(parent_element,
     stop('Please provide the document of which your methods information resides.', call. = FALSE)
   }
   
+  if (!file.exists(methods_file)) {
+    stop('Methods file provided could not be found', call. = FALSE)
+  }
+  
   parent_element <- EML::set_methods(methods_file = methods_file,
                                      instrumentation = instrumentation,
                                      software = software,
