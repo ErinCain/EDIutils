@@ -263,71 +263,75 @@ test_that('The attribute function adds attribute elements.', {
 })
 
 
-# test_that('Correct error and warning messages are produced', {
-#   methods <- add_data_table(parent_element = list(), 
-#                            entity_description = "Soil CO2 Fluxes 2013-2014",
-#                            physical = "physical",
-#                            attribute_list = "attribute_list",
-#                            number_of_records = "1", 
-#                            alternate_identifier = "NA",
-#                            methods = method)
-#   method <- add_method(methods_file = "tests/testthat/methods_test.docx")
-#   expect_error(methods,
-#   'Please provide an entity name i.e. a file name, name of database table, etc.')
-#   
-#   expect_error(add_data_table(parent_element = list(), 
-#                               entity_name = "692_EML_IncubationByDepth_SoilCO2Fluxes.csv",
-#                               physical = "physical",
-#                               attribute_list = "attribute_list",
-#                               number_of_records = "1",
-#                               alternate_identifier = "NA",
-#                               methods = method),
-#                'Please provide a brief description of the entity and its contents.')
-#   
-#   expect_error(add_data_table(parent_element = list(), 
-#                               entity_name = "692_EML_IncubationByDepth_SoilCO2Fluxes.csv",
-#                               entity_description = "Soil CO2 Fluxes 2013-2014",
-#                               attribute_list = "attribute_list",
-#                               number_of_records = "1",
-#                               alternate_identifier = "NA",
-#                               methods = method),
-#                'Please provide a full description of the full format of the physical element of your entity using the add_physical function.')
-#   
-#   expect_error(add_data_table(parent_element = list(), 
-#                               entity_name = "692_EML_IncubationByDepth_SoilCO2Fluxes.csv",
-#                               entity_description = "Soil CO2 Fluxes 2013-2014",
-#                               physical = "physical",
-#                               number_of_records = "1",
-#                               alternate_identifier = "NA",
-#                               methods = method),
-#                'Please provide a list of attributes which were used in this data table.')
-#   
-#   expect_message(add_data_table(parent_element = list(), 
-#                               entity_name = "692_EML_IncubationByDepth_SoilCO2Fluxes.csv",
-#                               entity_description = "Soil CO2 Fluxes 2013-2014",
-#                               physical = "physical",
-#                               attribute_list = "attribute_list",
-#                               alternate_identifier = "NA",
-#                               methods = method),
-#                'The number of records was not provided.')
-#   
-#   expect_message(add_data_table(parent_element = list(), 
-#                               entity_name = "692_EML_IncubationByDepth_SoilCO2Fluxes.csv",
-#                               entity_description = "Soil CO2 Fluxes 2013-2014",
-#                               physical = "physical",
-#                               attribute_list = "attribute_list",
-#                               number_of_records = "1",
-#                               methods = method),
-#                'An alternate identifier was not provided.')
-#   
-#   expect_message(add_data_table(parent_element = list(), 
-#                                 entity_name = "692_EML_IncubationByDepth_SoilCO2Fluxes.csv",
-#                                 entity_description = "Soil CO2 Fluxes 2013-2014",
-#                                 physical = "physical",
-#                                 attribute_list = "attribute_list",
-#                                 number_of_records = "1"),
-#                  'No method of data collection was provided.')
-# })
+test_that('Correct error and warning messages are produced', {
+  
+  method <- add_method(list(), methods_file = "methods_test.docx")
+  
+  expect_error(add_method(list(), methods_file = "This-does-not-exists.docx"), 
+               'Methods file provided could not be found')
+  
+  expect_error(add_data_table(parent_element = list(),
+                              entity_description = "Soil CO2 Fluxes 2013-2014",
+                              physical = "physical",
+                              attribute_list = "attribute_list",
+                              number_of_records = "1",
+                              alternate_identifier = "NA",
+                              methods = method),
+  'Please provide an entity name i.e. a file name, name of database table, etc.')
+
+  expect_error(add_data_table(parent_element = list(),
+                              entity_name = "692_EML_IncubationByDepth_SoilCO2Fluxes.csv",
+                              physical = "physical",
+                              attribute_list = "attribute_list",
+                              number_of_records = "1",
+                              alternate_identifier = "NA",
+                              methods = method),
+               'Please provide a brief description of the entity and its contents.')
+
+  expect_error(add_data_table(parent_element = list(),
+                              entity_name = "692_EML_IncubationByDepth_SoilCO2Fluxes.csv",
+                              entity_description = "Soil CO2 Fluxes 2013-2014",
+                              attribute_list = "attribute_list",
+                              number_of_records = "1",
+                              alternate_identifier = "NA",
+                              methods = method),
+               'Please provide a full description of the full format of the physical element of your entity using the add_physical function.')
+
+  expect_error(add_data_table(parent_element = list(),
+                              entity_name = "692_EML_IncubationByDepth_SoilCO2Fluxes.csv",
+                              entity_description = "Soil CO2 Fluxes 2013-2014",
+                              physical = "physical",
+                              number_of_records = "1",
+                              alternate_identifier = "NA",
+                              methods = method),
+               'Please provide a list of attributes which were used in this data table.')
+
+  expect_message(add_data_table(parent_element = list(),
+                              entity_name = "692_EML_IncubationByDepth_SoilCO2Fluxes.csv",
+                              entity_description = "Soil CO2 Fluxes 2013-2014",
+                              physical = "physical",
+                              attribute_list = "attribute_list",
+                              alternate_identifier = "NA",
+                              methods = method),
+               'The number of records was not provided.')
+
+  expect_message(add_data_table(parent_element = list(),
+                              entity_name = "692_EML_IncubationByDepth_SoilCO2Fluxes.csv",
+                              entity_description = "Soil CO2 Fluxes 2013-2014",
+                              physical = "physical",
+                              attribute_list = "attribute_list",
+                              number_of_records = "1",
+                              methods = method),
+               'An alternate identifier was not provided.')
+
+  expect_message(add_data_table(parent_element = list(),
+                                entity_name = "692_EML_IncubationByDepth_SoilCO2Fluxes.csv",
+                                entity_description = "Soil CO2 Fluxes 2013-2014",
+                                physical = "physical",
+                                attribute_list = "attribute_list",
+                                number_of_records = "1"),
+                 'No method of data collection was provided.')
+})
 
 # test_that('The add_data_table function adds the appropriate elements.', {
 #   
