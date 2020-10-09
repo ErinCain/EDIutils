@@ -277,8 +277,8 @@ test_that('Correct error and warning messages are produced', {
                               number_of_records = "1",
                               alternate_identifier = "NA",
                               methods = method),
-  'Please provide an entity name i.e. a file name, name of database table, etc.')
-
+               'Please provide an entity name i.e. a file name, name of database table, etc.')
+  
   expect_error(add_data_table(parent_element = list(),
                               entity_name = "692_EML_IncubationByDepth_SoilCO2Fluxes.csv",
                               physical = "physical",
@@ -287,7 +287,7 @@ test_that('Correct error and warning messages are produced', {
                               alternate_identifier = "NA",
                               methods = method),
                'Please provide a brief description of the entity and its contents.')
-
+  
   expect_error(add_data_table(parent_element = list(),
                               entity_name = "692_EML_IncubationByDepth_SoilCO2Fluxes.csv",
                               entity_description = "Soil CO2 Fluxes 2013-2014",
@@ -296,7 +296,7 @@ test_that('Correct error and warning messages are produced', {
                               alternate_identifier = "NA",
                               methods = method),
                'Please provide a full description of the full format of the physical element of your entity using the add_physical function.')
-
+  
   expect_error(add_data_table(parent_element = list(),
                               entity_name = "692_EML_IncubationByDepth_SoilCO2Fluxes.csv",
                               entity_description = "Soil CO2 Fluxes 2013-2014",
@@ -305,25 +305,25 @@ test_that('Correct error and warning messages are produced', {
                               alternate_identifier = "NA",
                               methods = method),
                'Please provide a list of attributes which were used in this data table.')
-
+  
   expect_message(add_data_table(parent_element = list(),
-                              entity_name = "692_EML_IncubationByDepth_SoilCO2Fluxes.csv",
-                              entity_description = "Soil CO2 Fluxes 2013-2014",
-                              physical = "physical",
-                              attribute_list = "attribute_list",
-                              alternate_identifier = "NA",
-                              methods = method),
-               'The number of records was not provided.')
-
+                                entity_name = "692_EML_IncubationByDepth_SoilCO2Fluxes.csv",
+                                entity_description = "Soil CO2 Fluxes 2013-2014",
+                                physical = "physical",
+                                attribute_list = "attribute_list",
+                                alternate_identifier = "NA",
+                                methods = method),
+                 'The number of records was not provided.')
+  
   expect_message(add_data_table(parent_element = list(),
-                              entity_name = "692_EML_IncubationByDepth_SoilCO2Fluxes.csv",
-                              entity_description = "Soil CO2 Fluxes 2013-2014",
-                              physical = "physical",
-                              attribute_list = "attribute_list",
-                              number_of_records = "1",
-                              methods = method),
-               'An alternate identifier was not provided.')
-
+                                entity_name = "692_EML_IncubationByDepth_SoilCO2Fluxes.csv",
+                                entity_description = "Soil CO2 Fluxes 2013-2014",
+                                physical = "physical",
+                                attribute_list = "attribute_list",
+                                number_of_records = "1",
+                                methods = method),
+                 'An alternate identifier was not provided.')
+  
   expect_message(add_data_table(parent_element = list(),
                                 entity_name = "692_EML_IncubationByDepth_SoilCO2Fluxes.csv",
                                 entity_description = "Soil CO2 Fluxes 2013-2014",
@@ -333,66 +333,63 @@ test_that('Correct error and warning messages are produced', {
                  'No method of data collection was provided.')
 })
 
-# test_that('The add_data_table function adds the appropriate elements.', {
-#   
-#   method <- add_method(methods_file = "tests/testthat/methods_test.docx")
-# 
-#   attribute_1 <- add_attribute(attribute_name = "site_id",
-#                                attribute_definition = "Site id as used in sites table",
-#                                storage_type = EDIutils::storage_type$integer,
-#                                measurement_scale = EDIutils::measurement_scale$nominal,
-#                                domain = "text",
-#                                definition = "Site id as used in sites table.")
-#   attribute_2 <- add_attribute(attribute_name = "LatitudeDD",
-#                                attribute_definition = "Latitude",
-#                                storage_type = EDIutils::storage_type$string,
-#                                measurement_scale = EDIutils::measurement_scale$ordinal,
-#                                domain = "text",
-#                                definition = "Latitude")
-#   attribute_list <- list(attribute_1, attribute_2)
+test_that('The add_data_table function adds the appropriate elements.', {
+  # method <- add_method(list(), methods_file = "methods_test.docx")
+  method <- create_method(methods_file = "methods_test.docx")
+  attribute_1 <- add_attribute(attribute_name = "site_id",
+                               attribute_definition = "Site id as used in sites table",
+                               storage_type = EDIutils::storage_type$integer,
+                               measurement_scale = EDIutils::measurement_scale$nominal,
+                               domain = "text",
+                               definition = "Site id as used in sites table.")
+  attribute_2 <- add_attribute(attribute_name = "LatitudeDD",
+                               attribute_definition = "Latitude",
+                               storage_type = EDIutils::storage_type$string,
+                               measurement_scale = EDIutils::measurement_scale$ordinal,
+                               domain = "text",
+                               definition = "Latitude")
+  attribute_list <- list(attribute_1, attribute_2)
 
-#   physical <- add_physical(file_path = "test_data.csv",
-#                            data_url = "https://mydata.org/etc")
-#   
-#   expect_equal(add_data_table(parent_element = list(), 
-#                               entity_name = "692_EML_IncubationByDepth_SoilCO2Fluxes.csv",
-#                               entity_description = "Soil CO2 Fluxes 2013-2014",
-#                               physical = physical,
-#                               attribute_list = attribute_list,
-#                               number_of_records = "1",
-#                               alternate_identifier = "NA", 
-#                               methods = method), 
-#                list(dataTable = list(entityName = "692_EML_IncubationByDepth_SoilCO2Fluxes.csv", 
-#                                      entityDescription = "Soil CO2 Fluxes 2013-2014", physical = list(
-#                                        objectName = "test_data.csv", size = list(unit = "bytes", 
-#                                                                                  size = "322"), authentication = list(method = "MD5", 
-#                                                                                                                       authentication = "ee28a90141e061821c891e1172f2eec1"), 
-#                                        dataFormat = list(textFormat = list(numHeaderLines = "1", 
-#                                                                            recordDelimiter = "\\r\\n", attributeOrientation = "column", 
-#                                                                            simpleDelimited = list(fieldDelimiter = ","))), distribution = list(
-#                                                                              online = list(url = list(url = "https://mydata.org/etc", 
-#                                                                                                       `function` = "download")))), attributeList = list(
-#                                                                                                         list(attributeName = "site_id", attributeDefinition = "Site id as used in sites table", 
-#                                                                                                              storageType = NULL, measurementScale = list(nominal = list(
-#                                                                                                                nonNumericDomain = list(textDomain = list(definition = "Site id as used in sites table."))))), 
-#                                                                                                         list(attributeName = "LatitudeDD", attributeDefinition = "Latitude", 
-#                                                                                                              storageType = "string", measurementScale = list(ordinal = list(
-#                                                                                                                nonNumericDomain = list(textDomain = list(definition = "Latitude")))))), 
-#                                      numberOfRecords = "1", alternateIdentifier = "NA", sampling = NULL, 
-#                                      methodStep = list(instrumentation = character(0), software = NULL, 
-#                                                        description = list(section = list("<title>Title 1</title>\n<para>\n    This is the first paragraph.\n  </para>\n<para>\n    This is the second paragraph.\n  </para>", 
-#                                                                                          "<title>Title 2 </title>\n<para>\n    This is the third paragraph.\n  </para>\n<para>\n    This is the fourth paragraph.\n  </para>"), 
-#                                                                           para = list())))))
-#   
-# })
+  physical <- add_physical(file_path = "test_data.csv",
+                           data_url = "https://mydata.org/etc")
+  expect_equal(add_data_table(parent_element = list(),
+                              entity_name = "692_EML_IncubationByDepth_SoilCO2Fluxes.csv",
+                              entity_description = "Soil CO2 Fluxes 2013-2014",
+                              physical = physical,
+                              attribute_list = attribute_list,
+                              number_of_records = "1",
+                              alternate_identifier = "NA", 
+                              methods = method),
+               list(dataTable = list(entityName = "692_EML_IncubationByDepth_SoilCO2Fluxes.csv",
+                                     entityDescription = "Soil CO2 Fluxes 2013-2014", physical = list(
+                                       objectName = "test_data.csv", size = list(unit = "bytes",
+                                                                                 size = "322"), authentication = list(method = "MD5",
+                                                                                                                      authentication = "ee28a90141e061821c891e1172f2eec1"),
+                                       dataFormat = list(textFormat = list(numHeaderLines = "1",
+                                                                           recordDelimiter = "\\r\\n", attributeOrientation = "column",
+                                                                           simpleDelimited = list(fieldDelimiter = ","))), distribution = list(
+                                                                             online = list(url = list(url = "https://mydata.org/etc",
+                                                                                                      `function` = "download")))), attributeList = list(
+                                                                                                        list(attributeName = "site_id", attributeDefinition = "Site id as used in sites table",
+                                                                                                             storageType = NULL, measurementScale = list(nominal = list(
+                                                                                                               nonNumericDomain = list(textDomain = list(definition = "Site id as used in sites table."))))),
+                                                                                                        list(attributeName = "LatitudeDD", attributeDefinition = "Latitude",
+                                                                                                             storageType = "string", measurementScale = list(ordinal = list(
+                                                                                                               nonNumericDomain = list(textDomain = list(definition = "Latitude")))))),
+                                     numberOfRecords = "1", alternateIdentifier = "NA", sampling = NULL,
+                                     methodStep = list(instrumentation = character(0), software = NULL,
+                                                       description = list(section = list("<title>Title 1</title>\n<para>\n    This is the first paragraph.\n  </para>\n<para>\n    This is the second paragraph.\n  </para>",
+                                                                                         "<title>Title 2 </title>\n<para>\n    This is the third paragraph.\n  </para>\n<para>\n    This is the fourth paragraph.\n  </para>"),
+                                                                          para = list())))))
+  
+})
 
 #Tests for add_physical function
-
-# test_that('Correct error and warning messages are produced for the add_physical function', {
-#   physical <- add_physical(file_path = "test_data.csv")
-#   expect_message(physical,
-#                  'No url has been provided. Please input a url to which the data file can be downloaded if possible.')
-# })
+# TODO: unclear as to what this is testing
+test_that('Correct error and warning messages are produced for the add_physical function', {
+  expect_message(add_physical(file_path = "test_data.csv"),
+                 'No url has been provided. Please input a url to which the data file can be downloaded if possible.')
+})
 
 test_that('The add_physical function adds the physical elements', {
   
