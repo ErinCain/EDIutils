@@ -1,0 +1,456 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<eml:eml xmlns:eml="https://eml.ecoinformatics.org/eml-2.2.0" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:stmml="http://www.xml-cml.org/schema/stmml-1.2" packageId="uuid::UUIDgenerate()" system="uuid" xsi:schemaLocation="https://eml.ecoinformatics.org/eml-2.2.0 https://eml.ecoinformatics.org/eml-2.2.0/eml.xsd">
+  <dataset>
+    <abstract>
+      <para>
+  The Central Valley Project Improvement Act (CVPIA) funds habitat
+  improvement work in the Central Valley of California to increase
+  salmonid populations in furtherance of meeting CVPIA fish doubling
+  goals. This dataset covers salmonid observations conducted in the
+  Sacramento River and focused on assessing effectiveness of salmonid
+  habitat improvement projects. Surveys are conducted roughly every
+  other week and include pre-project sites, constructed habitat project
+  sites, and control sites where no treatment is planned. Sites are
+  snorkeled by a crew of two to three people and all salmonids are
+  counted by size category within pre-set survey reaches. Snorkelers
+  record data on dive slates and then transcribe to paper data sheets
+  and computer files. Annual reports summarize the survey findings.
+</para>
+    </abstract>
+    <associatedParty>
+      <individualName>
+        <givenName>Mandy</givenName>
+        <surName>Banet</surName>
+      </individualName>
+      <role>other</role>
+    </associatedParty>
+    <associatedParty>
+      <individualName>
+        <givenName>Steve</givenName>
+        <surName>Tussing</surName>
+      </individualName>
+      <role>other</role>
+    </associatedParty>
+    <associatedParty>
+      <individualName>
+        <givenName>Ryan</givenName>
+        <surName>Greathouse</surName>
+      </individualName>
+      <role>other</role>
+    </associatedParty>
+    <award>
+      <funderName>Susan Strachan, USBR</funderName>
+      <funderIdentifier>NA</funderIdentifier>
+      <awardNumber>12345</awardNumber>
+      <title>Salmonid Spawning and Rearing Habitat Restoration in the Sacramento River</title>
+    </award>
+    <contact>
+      <individualName>
+        <givenName>John M.</givenName>
+        <surName>Hannon</surName>
+      </individualName>
+      <electronicMailAddress>jhannon@usbr.gov</electronicMailAddress>
+    </contact>
+    <coverage>
+      <geographicCoverage>
+        <geographicDescription>Sacramento River in northern California in the reach of river between Keswick Dam and Sacramento</geographicDescription>
+        <boundingCoordinates>
+          <westBoundingCoordinate>-122.4482</westBoundingCoordinate>
+          <eastBoundingCoordinate>-121.4844</eastBoundingCoordinate>
+          <northBoundingCoordinate>40.6124</northBoundingCoordinate>
+          <southBoundingCoordinate>38.5094</southBoundingCoordinate>
+        </boundingCoordinates>
+      </geographicCoverage>
+      <temporalCoverage>
+        <rangeOfDates>
+          <beginDate>
+            <calendarDate>2016-01-01</calendarDate>
+          </beginDate>
+          <endDate>
+            <calendarDate>ongoing</calendarDate>
+          </endDate>
+        </rangeOfDates>
+      </temporalCoverage>
+    </coverage>
+    <coverage>
+      <geographicCoverage>
+        <geographicDescription>Sacramento River in northern California in the reach of river between Keswick Dam and Sacramento</geographicDescription>
+        <boundingCoordinates>
+          <westBoundingCoordinate>-122.4482</westBoundingCoordinate>
+          <eastBoundingCoordinate>-121.4844</eastBoundingCoordinate>
+          <northBoundingCoordinate>40.6124</northBoundingCoordinate>
+          <southBoundingCoordinate>38.5094</southBoundingCoordinate>
+        </boundingCoordinates>
+      </geographicCoverage>
+      <temporalCoverage>
+        <rangeOfDates>
+          <beginDate>
+            <calendarDate>2016-01-01</calendarDate>
+          </beginDate>
+          <endDate>
+            <calendarDate>ongoing</calendarDate>
+          </endDate>
+        </rangeOfDates>
+      </temporalCoverage>
+      <taxonomicCoverage>
+        <taxonomicClassification>
+          <taxonRankName>kingdom</taxonRankName>
+          <taxonRankValue>Animalia</taxonRankValue>
+          <taxonomicClassification>
+            <taxonRankName>phylum</taxonRankName>
+            <taxonRankValue>Chordata</taxonRankValue>
+            <taxonomicClassification>
+              <taxonRankName>class</taxonRankName>
+              <taxonRankValue>Teleostei</taxonRankValue>
+              <taxonomicClassification>
+                <taxonRankName>order</taxonRankName>
+                <taxonRankValue>Salmoniformes</taxonRankValue>
+                <taxonomicClassification>
+                  <taxonRankName>family</taxonRankName>
+                  <taxonRankValue>Salmonidae</taxonRankValue>
+                  <taxonomicClassification>
+                    <taxonRankName>genus</taxonRankName>
+                    <taxonRankValue>Oncorhynchus</taxonRankValue>
+                    <taxonomicClassification>
+                      <taxonRankName>species</taxonRankName>
+                      <taxonRankValue>Oncorhynchus tshawytscha</taxonRankValue>
+                      <commonName>Chinook Salmon</commonName>
+                      <taxonId provider="https://itis.gov">161980</taxonId>
+                    </taxonomicClassification>
+                  </taxonomicClassification>
+                </taxonomicClassification>
+              </taxonomicClassification>
+            </taxonomicClassification>
+          </taxonomicClassification>
+        </taxonomicClassification>
+      </taxonomicCoverage>
+    </coverage>
+    <coverage>
+      <geographicCoverage>
+        <geographicDescription>Sacramento River in northern California in the reach of river between Keswick Dam and Sacramento</geographicDescription>
+        <boundingCoordinates>
+          <westBoundingCoordinate>-122.4482</westBoundingCoordinate>
+          <eastBoundingCoordinate>-121.4844</eastBoundingCoordinate>
+          <northBoundingCoordinate>40.6124</northBoundingCoordinate>
+          <southBoundingCoordinate>38.5094</southBoundingCoordinate>
+        </boundingCoordinates>
+      </geographicCoverage>
+      <temporalCoverage>
+        <rangeOfDates>
+          <beginDate>
+            <calendarDate>2016-01-01</calendarDate>
+          </beginDate>
+          <endDate>
+            <calendarDate>ongoing</calendarDate>
+          </endDate>
+        </rangeOfDates>
+      </temporalCoverage>
+      <taxonomicCoverage>
+        <taxonomicClassification>
+          <taxonRankName>kingdom</taxonRankName>
+          <taxonRankValue>Animalia</taxonRankValue>
+          <taxonomicClassification>
+            <taxonRankName>phylum</taxonRankName>
+            <taxonRankValue>Chordata</taxonRankValue>
+            <taxonomicClassification>
+              <taxonRankName>class</taxonRankName>
+              <taxonRankValue>Teleostei</taxonRankValue>
+              <taxonomicClassification>
+                <taxonRankName>order</taxonRankName>
+                <taxonRankValue>Salmoniformes</taxonRankValue>
+                <taxonomicClassification>
+                  <taxonRankName>family</taxonRankName>
+                  <taxonRankValue>Salmonidae</taxonRankValue>
+                  <taxonomicClassification>
+                    <taxonRankName>genus</taxonRankName>
+                    <taxonRankValue>Oncorhynchus</taxonRankValue>
+                    <taxonomicClassification>
+                      <taxonRankName>species</taxonRankName>
+                      <taxonRankValue>Oncorhynchus tshawytscha</taxonRankValue>
+                      <commonName>Chinook Salmon</commonName>
+                      <taxonId provider="https://itis.gov">161980</taxonId>
+                    </taxonomicClassification>
+                  </taxonomicClassification>
+                </taxonomicClassification>
+              </taxonomicClassification>
+            </taxonomicClassification>
+          </taxonomicClassification>
+        </taxonomicClassification>
+        <taxonomicClassification.1>
+          <taxonRankName>kingdom</taxonRankName>
+          <taxonRankValue>Animalia</taxonRankValue>
+          <taxonomicClassification>
+            <taxonRankName>phylum</taxonRankName>
+            <taxonRankValue>Chordata</taxonRankValue>
+            <taxonomicClassification>
+              <taxonRankName>class</taxonRankName>
+              <taxonRankValue>Teleostei</taxonRankValue>
+              <taxonomicClassification>
+                <taxonRankName>order</taxonRankName>
+                <taxonRankValue>Salmoniformes</taxonRankValue>
+                <taxonomicClassification>
+                  <taxonRankName>family</taxonRankName>
+                  <taxonRankValue>Salmonidae</taxonRankValue>
+                  <taxonomicClassification>
+                    <taxonRankName>genus</taxonRankName>
+                    <taxonRankValue>Oncorhynchus</taxonRankValue>
+                    <taxonomicClassification>
+                      <taxonRankName>species</taxonRankName>
+                      <taxonRankValue>Oncorhynchus mykiss</taxonRankValue>
+                      <commonName>Steelhead Trout</commonName>
+                      <taxonId provider="https://itis.gov">161989</taxonId>
+                    </taxonomicClassification>
+                  </taxonomicClassification>
+                </taxonomicClassification>
+              </taxonomicClassification>
+            </taxonomicClassification>
+          </taxonomicClassification>
+        </taxonomicClassification.1>
+      </taxonomicCoverage>
+    </coverage>
+    <creator id="https://orcid.org/0000-0001-9057-9084">
+      <individualName>
+        <givenName>John M.</givenName>
+        <surName>Hannon</surName>
+      </individualName>
+      <electronicMailAddress>jhannon@usbr.gov</electronicMailAddress>
+    </creator>
+    <dataTable>
+      <entityName>Variables</entityName>
+      <entityDescription>Data table which contains the response and explanatory variables</entityDescription>
+      <physical>
+        <physical>
+          <objectName>hannon_example_physical_data.csv</objectName>
+          <size unit="bytes">65400</size>
+          <authentication method="MD5">5ee1e9f787534353681b11e41588521e</authentication>
+          <dataFormat>
+            <textFormat>
+              <numHeaderLines>1</numHeaderLines>
+              <recordDelimiter>\r\n</recordDelimiter>
+              <attributeOrientation>column</attributeOrientation>
+              <simpleDelimited>
+                <fieldDelimiter>,</fieldDelimiter>
+              </simpleDelimited>
+            </textFormat>
+          </dataFormat>
+          <distribution>
+            <online>
+              <url function="download"/>
+            </online>
+          </distribution>
+        </physical>
+      </physical>
+      <methods>
+        <methodStep>
+          <description>
+            <section>
+              <title>Response Variable Methods </title>
+              <para>
+    Monitoring efforts will generate data for the following response
+    variables for the purposes of testing hypotheses (Table 1). Specific
+    response variable metrics are identified while methods reference
+    field protocols that are documented in Appendix A (Table A - 1),
+    which can be viewed at
+    https://www.sacramentoriver.org/forum/publications/side_channels/Monitoring%20Plan%20(final)%20170831.pdf
+  </para>
+            </section>
+            <section>
+              <title>Explanatory Variable Methods </title>
+              <para>
+    Monitoring efforts will generate data for the following explanatory
+    variables to test causal mechanisms and validate the linkage between
+    restoration actions and the biologic response to those actions
+    (Table 2). Specific explanatory variable metrics are identified
+    while methods reference field protocols that are documented in
+    Appendix A (Table A - 2), which can be viewed at
+    https://www.sacramentoriver.org/forum/publications/side_channels/Monitoring%20Plan%20(final)%20170831.pdf
+  </para>
+            </section>
+          </description>
+        </methodStep>
+      </methods>
+      <attributeList>
+        <attribute>
+          <attributeName>Weather</attributeName>
+          <attributeDefinition>The weather on that day</attributeDefinition>
+          <storageType>string</storageType>
+          <measurementScale>
+            <nominal>
+              <nonNumericDomain>
+                <enumeratedDomain>
+                  <codeDefinition>
+                    <code>1</code>
+                    <definition>Clear</definition>
+                  </codeDefinition>
+                  <codeDefinition>
+                    <code>2</code>
+                    <definition>Partly Cloudy</definition>
+                  </codeDefinition>
+                  <codeDefinition>
+                    <code>3</code>
+                    <definition>Cloudy</definition>
+                  </codeDefinition>
+                  <codeDefinition>
+                    <code>4</code>
+                    <definition>Rain</definition>
+                  </codeDefinition>
+                  <codeDefinition>
+                    <code>5</code>
+                    <definition>Snow</definition>
+                  </codeDefinition>
+                  <codeDefinition>
+                    <code>6</code>
+                    <definition>Fog</definition>
+                  </codeDefinition>
+                </enumeratedDomain>
+              </nonNumericDomain>
+            </nominal>
+          </measurementScale>
+        </attribute>
+        <attribute>
+          <attributeName>Date</attributeName>
+          <attributeDefinition>The day tha the data was collected</attributeDefinition>
+          <storageType>date</storageType>
+          <measurementScale>
+            <dateTime>
+              <formatString>YYYY '-' MM '-' DD</formatString>
+              <dateTimePrecision>YYYY '-' MM '-' DD</dateTimePrecision>
+              <dateTimeDomain>
+                <bounds>
+                  <minimum exclusive="false">2015-12-08</minimum>
+                  <maximum exclusive="false">ongoing</maximum>
+                </bounds>
+              </dateTimeDomain>
+            </dateTime>
+          </measurementScale>
+        </attribute>
+      </attributeList>
+    </dataTable>
+    <dataTable>
+      <entityName>Variables</entityName>
+      <entityDescription>Data table which contains the response and explanatory variables</entityDescription>
+      <physical>
+        <physical>
+          <objectName>hannon_example_physical_data.csv</objectName>
+          <size unit="bytes">65400</size>
+          <authentication method="MD5">5ee1e9f787534353681b11e41588521e</authentication>
+          <dataFormat>
+            <textFormat>
+              <numHeaderLines>1</numHeaderLines>
+              <recordDelimiter>\r\n</recordDelimiter>
+              <attributeOrientation>column</attributeOrientation>
+              <simpleDelimited>
+                <fieldDelimiter>,</fieldDelimiter>
+              </simpleDelimited>
+            </textFormat>
+          </dataFormat>
+          <distribution>
+            <online>
+              <url function="download"/>
+            </online>
+          </distribution>
+        </physical>
+      </physical>
+      <attributeList>
+        <attribute>
+          <attributeName>Weather</attributeName>
+          <attributeDefinition>The weather on that day</attributeDefinition>
+          <storageType>string</storageType>
+          <measurementScale>
+            <nominal>
+              <nonNumericDomain>
+                <enumeratedDomain>
+                  <codeDefinition>
+                    <code>1</code>
+                    <definition>Clear</definition>
+                  </codeDefinition>
+                  <codeDefinition>
+                    <code>2</code>
+                    <definition>Partly Cloudy</definition>
+                  </codeDefinition>
+                  <codeDefinition>
+                    <code>3</code>
+                    <definition>Cloudy</definition>
+                  </codeDefinition>
+                  <codeDefinition>
+                    <code>4</code>
+                    <definition>Rain</definition>
+                  </codeDefinition>
+                  <codeDefinition>
+                    <code>5</code>
+                    <definition>Snow</definition>
+                  </codeDefinition>
+                  <codeDefinition>
+                    <code>6</code>
+                    <definition>Fog</definition>
+                  </codeDefinition>
+                </enumeratedDomain>
+              </nonNumericDomain>
+            </nominal>
+          </measurementScale>
+        </attribute>
+        <attribute>
+          <attributeName>Date</attributeName>
+          <attributeDefinition>The day tha the data was collected</attributeDefinition>
+          <storageType>date</storageType>
+          <measurementScale>
+            <dateTime>
+              <formatString>YYYY '-' MM '-' DD</formatString>
+              <dateTimePrecision>YYYY '-' MM '-' DD</dateTimePrecision>
+              <dateTimeDomain>
+                <bounds>
+                  <minimum exclusive="false">2015-12-08</minimum>
+                  <maximum exclusive="false">ongoing</maximum>
+                </bounds>
+              </dateTimeDomain>
+            </dateTime>
+          </measurementScale>
+        </attribute>
+      </attributeList>
+    </dataTable>
+    <intellectualRights>
+      <para>This data package is released to the "public domain" under Creative Commons CC0 1.0 "No Rights Reserved" (see: https://creativecommons.org/publicdomain/zero/1.0/). It is considered professional etiquette to provide attribution of the original work if this data package is shared in whole or by individual components. A generic citation is provided for this data package on the website https://portal.edirepository.org (herein "website") in the summary metadata page. Communication (and collaboration) with the creators of this data package is recommended to prevent duplicate research or publication. This data package (and its components) is made available "as is" and with no warranty of accuracy or fitness for use. The creators of this data package and the website shall not be liable for any damages resulting from misinterpretation or misuse of the data package or its components. Periodic updates of this data package may be available from the website. Thank you.&amp;#13;</para>
+    </intellectualRights>
+    <licensed>
+      <licenseName>Creative Commons Zero v1.0 Universal</licenseName>
+      <url>https://spdx.org/licenses/CC0-1.0.html</url>
+      <identifier>CC0-1.0</identifier>
+    </licensed>
+    <maintenance>
+      <description>ongoing</description>
+      <maintenanceUpdateFrequency>monthly</maintenanceUpdateFrequency>
+    </maintenance>
+    <methods>
+      <methodStep>
+        <description>
+          <section>
+            <title>Response Variable Methods </title>
+            <para>
+    Monitoring efforts will generate data for the following response
+    variables for the purposes of testing hypotheses (Table 1). Specific
+    response variable metrics are identified while methods reference
+    field protocols that are documented in Appendix A (Table A - 1),
+    which can be viewed at
+    https://www.sacramentoriver.org/forum/publications/side_channels/Monitoring%20Plan%20(final)%20170831.pdf
+  </para>
+          </section>
+          <section>
+            <title>Explanatory Variable Methods </title>
+            <para>
+    Monitoring efforts will generate data for the following explanatory
+    variables to test causal mechanisms and validate the linkage between
+    restoration actions and the biologic response to those actions
+    (Table 2). Specific explanatory variable metrics are identified
+    while methods reference field protocols that are documented in
+    Appendix A (Table A - 2), which can be viewed at
+    https://www.sacramentoriver.org/forum/publications/side_channels/Monitoring%20Plan%20(final)%20170831.pdf
+  </para>
+          </section>
+        </description>
+      </methodStep>
+    </methods>
+    <pubDate>2020-10-08</pubDate>
+    <shortName>CVPIA Salmonid Habitat Monitoring Data</shortName>
+    <title>Salmonid habitat use monitoring used to determine effectiveness of habitat improvement projects in the Sacramento River, CA</title>
+  </dataset>
+</eml:eml>
