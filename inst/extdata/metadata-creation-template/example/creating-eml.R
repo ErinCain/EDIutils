@@ -1,23 +1,24 @@
 library(tidyverse)
 library(EDIutils)
 library(readxl)
-
+library(forcats)
 # clean the data 
 path_to_data <- system.file("extdata/metadata-creation-template/example",
                             "hannon_example_physical_data.csv", 
                             package = "EDIutils")
+
+# we can handle all missing values at the end when we write to csv
+missing_value_code <- "NA"
 
 raw_data <- read_csv(path_to_data) %>% select(-starts_with("X"))
 
 raw_data %>% 
   glimpse()
 
-# clean up:
+# clean up col names
 # 1. remove: month, year, visibility_feet
 # 2. rename: all to snake_case, remove units
-# 3. 
 
-# fix columns
 data_cols_fixed <- raw_data %>% 
   select(-Month, -Year, Visibility_feet) %>% # remove Month and Year, and Visibility_feet
   rename_with(~snakecase::to_snake_case(.x)) %>% 
@@ -31,8 +32,46 @@ data_cols_fixed <- raw_data %>%
     length = length_meters, # fix len in meters
   )
 
-# fix values
-data_cols_fixed
+# clean up values
+# 1. treatment values need to be all of the same case (convert to integers)?
+# 2. convert water temp to C
+# 3. survey method needs to have all values of the same case (convert to integers)?
+
+# using factor for enumerated values ensures that we either have a text value or NA 
+# value that came up due to it not named appropriately, we will by is.na to check these cases
+
+data_factors_fixed <- data_cols_fixed %>% 
+  mutate(
+    treatment = factor(tolower(treatment), levels = c("baseline", "control", "impact")), 
+    survey_method = factor(tolower(survey_method), levels = c("snorkel downstream", "snorkel upstream")), 
+    video_or_observer = factor(tolower(video_or_observer), levels = c("video", "observer"))
+  )
+
+# check to see if any of the factor data resulted in NA?
+data_factors_fixed %>% 
+  filter(is.na(treatment)) #this same NA exists in the original 
+
+data_factors_fixed %>% 
+  filter(is.na(survey_method))
+
+data_factors_fixed %>% 
+  filter(is.na(video_or_observer))
+
+# units 
+# * water elevation 
+# * water temp
+# * calculated flows
+data_units_fixed <- data_factors_fixed %>% 
+  mutate(
+    date = lubridate::mdy(date),
+    water_temp = measurements::conv_unit(water_temp, from = "F", to = "C")
+  )
+
+
+clean_data <- data_units_fixed
+write_csv(clean_data, "inst/extdata/metadata-creation-template/example/snorkel-data.csv", 
+          na = missing_value_code)
+
 
 # read in eml components
 
