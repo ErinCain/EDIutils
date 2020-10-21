@@ -2,8 +2,9 @@ library(tidyverse)
 library(EDIutils)
 library(readxl)
 library(forcats)
+
 # clean the data 
-path_to_data <- system.file("extdata/metadata-creation-template/example",
+path_to_data <- system.file("extdata/metadata-creation-template/example/hannon-example",
                             "hannon_example_physical_data.csv", 
                             package = "EDIutils")
 
@@ -20,7 +21,7 @@ raw_data %>%
 # 2. rename: all to snake_case, remove units
 
 data_cols_fixed <- raw_data %>% 
-  select(-Month, -Year, Visibility_feet) %>% # remove Month and Year, and Visibility_feet
+  select(-Month, -Year, Visibility_meters) %>% # remove Month and Year, and Visibility_meters
   rename_with(~snakecase::to_snake_case(.x)) %>% 
   rename(
     # catch counts columns
@@ -43,7 +44,8 @@ data_cols_fixed <- raw_data %>%
 data_factors_fixed <- data_cols_fixed %>% 
   mutate(
     treatment = factor(tolower(treatment), levels = c("baseline", "control", "impact")), 
-    survey_method = factor(tolower(survey_method), levels = c("snorkel downstream", "snorkel upstream")), 
+    survey_method = factor(tolower(survey_method), levels = c("snorkel downstream", "snorkel upstream", 
+                                                              "e-fishing", "wading")), 
     video_or_observer = factor(tolower(video_or_observer), levels = c("video", "observer"))
   )
 
@@ -57,19 +59,10 @@ data_factors_fixed %>%
 data_factors_fixed %>% 
   filter(is.na(video_or_observer))
 
-# units 
-# * water elevation 
-# * water temp
-# * calculated flows
-data_units_fixed <- data_factors_fixed %>% 
-  mutate(
-    date = lubridate::mdy(date),
-    water_temp = measurements::conv_unit(water_temp, from = "F", to = "C")
-  )
+# units are good to go
 
-
-clean_data <- data_units_fixed
-write_csv(clean_data, "inst/extdata/metadata-creation-template/example/snorkel-data.csv", 
+clean_data <- data_factors_fixed
+write_csv(clean_data, "inst/extdata/metadata-creation-template/example/hannon-example/snorkel-data.csv", 
           na = missing_value_code)
 
 
