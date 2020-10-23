@@ -1,25 +1,25 @@
 #' Add License and Intellectual Rights
 #' @description Adds the intellectual rights information of a dataset based off of EML standards.
 #' @param parent_element A list representing the EML project or dataset.
-#' @param default_license Use "CCO" or "CCBY" as argument value to use one of the 
+#' @param default_license Use "CC0" or "CCBY" as argument value to use one of the 
 #' CVPIA default licenses. Supply NULL if using another license.
-#' @param license_name Optional if using default_license = "CCO" or "CCBY" as 
+#' @param license_name Optional if using default_license = "CC0" or "CCBY" as 
 #' default values are provided. Otherwise, please provide the appropriate license 
 #' name. Other possible license examples include "MIT License" and "Creative Commons 
 #' Attribution Non Commercial Share Alike 4.0 International". 
-#' @param license_url Optional if using default_license = "CCO" or "CCBY" as default
+#' @param license_url Optional if using default_license = "CC0" or "CCBY" as default
 #' values are provided. Otherwise, please provide the correct license url 
 #' to view further license information.
-#' @param license_identifier Optional if using default_license = "CCO" or "CCBY" 
+#' @param license_identifier Optional if using default_license = "CC0" or "CCBY" 
 #' as default values are provided. Otherwise, please provide the appropriate 
 #' identifier. Other possible identifiers include "MIT" and "CC-BY-NC-SA". 
-#' @param intellectual_rights_descripiton Optional if using default_license = "CCO" 
+#' @param intellectual_rights_descripiton Optional if using default_license = "CC0" 
 #' or "CCBY" as default values are provided. Otherwise, please provide a short 
 #' description of the license being used and its regulations. 
 #' @details 
 #' Learn more about the default CVPIA licese options from Creative Commons:
 #' \itemize{
-#'  \item \href{https://creativecommons.org/publicdomain/zero/1.0/}{CCO} - 
+#'  \item \href{https://creativecommons.org/publicdomain/zero/1.0/}{CC0} - 
 #'  The most premissive license, appropriate for data in the public domain.
 #'  \item \href{https://creativecommons.org/licenses/by/4.0/}{CC BY} - Attribution required
 #' }
@@ -33,7 +33,7 @@
 #' @return The project or dataset list with the intellectual rights appended.
 #' 
 #' @examples 
-#' add_license(parent_element = list()) # defaults to CCO
+#' add_license(parent_element = list()) # defaults to CC0
 #' 
 #' add_license(parent_element = list(), default_license = "CCBY")
 #' 
@@ -65,7 +65,7 @@
 #'            distribute your contributions on this same license. Thank you.&#13;")
 #' 
 #' @export
-add_license <- function(parent_element, default_license = c("CCO", "CCBY"), 
+add_license <- function(parent_element, default_license = c("CC0", "CCBY"), 
                         license_name = NULL, license_url = NULL, 
                         license_identifier = NULL, intellectual_rights_descripiton = NULL) {
   
@@ -92,7 +92,7 @@ add_license <- function(parent_element, default_license = c("CCO", "CCBY"),
                                     url = license_url,
                                     identifier = license_identifier)
   } else {
-    if (default_license == "CCO") {
+    if (default_license == "CC0") {
       parent_element$intellectualRights <- list(para = "This data package is released to the \"public domain\" under Creative Commons CC0 1.0 \"No Rights Reserved\" (see: https://creativecommons.org/publicdomain/zero/1.0/). It is considered professional etiquette to provide attribution of the original work if this data package is shared in whole or by individual components. A generic citation is provided for this data package on the website https://portal.edirepository.org (herein \"website\") in the summary metadata page. Communication (and collaboration) with the creators of this data package is recommended to prevent duplicate research or publication. This data package (and its components) is made available \"as is\" and with no warranty of accuracy or fitness for use. The creators of this data package and the website shall not be liable for any damages resulting from misinterpretation or misuse of the data package or its components. Periodic updates of this data package may be available from the website. Thank you.&#13;")
       parent_element$licensed <- list(licenseName = "Creative Commons Zero v1.0 Universal", 
                                       url = "https://spdx.org/licenses/CC0-1.0.html",
